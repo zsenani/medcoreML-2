@@ -27,6 +27,10 @@ api = Api(app)
 
 # uploadToBlobStorage('dataset.csv','dataset.csv')
 
+@app.route("/")
+def hello():
+    return "Hello, World!"
+
 class helloworld(Resource):
     def post(self):
         print('a')
