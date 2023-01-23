@@ -68,4 +68,4 @@ def home():
 
 @app.route('/api/tasks')
 def tasks():
-    return tasksJSON
+    return jsonify({'name' : sorted_arr1})
