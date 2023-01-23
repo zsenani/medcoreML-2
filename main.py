@@ -3,7 +3,7 @@ from flask import Flask
 # import pandas as pd
 # from scipy.spatial.distance import squareform
 # from scipy.spatial.distance import pdist, jaccard
- import json
+import json
 
 app = Flask(__name__)
 
