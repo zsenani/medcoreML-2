@@ -1,8 +1,8 @@
 from flask import Flask
-# from flask import Flask, jsonify
+from flask import Flask, jsonify
 import pandas as pd
-# from scipy.spatial.distance import squareform
-# from scipy.spatial.distance import pdist, jaccard
+from scipy.spatial.distance import squareform
+from scipy.spatial.distance import pdist, jaccard
 import json
 
 app = Flask(__name__)
