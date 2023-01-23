@@ -42,7 +42,7 @@ sorted_arr1 = sorted(arr1.items(), key=lambda x:x[1], reverse=True)
 
 tasks = [
     {
-        'id': sorted_arr1,
+        'id': index,
         'name': "task1",
         "description": "This is task 1"
     },
