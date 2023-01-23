@@ -3,4 +3,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return 1 + 1
+    sum = 1 + 1
+    return sum
