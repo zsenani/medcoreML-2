@@ -42,7 +42,7 @@ sorted_arr1 = sorted(arr1.items(), key=lambda x:x[1], reverse=True)
 
 tasks = [
     {
-        'id': 1,
+        'id': sorted_arr1,
         'name': "task1",
         "description": "This is task 1"
     },
@@ -58,8 +58,8 @@ tasks = [
     }
 ]
 
-#tasksJSON = json.dumps(tasks)
-tasksJSON = jsonify({'name' : sorted_arr1})
+tasksJSON = json.dumps(tasks)
+#tasksJSON = jsonify({'name' : sorted_arr1})
 
 @app.route('/')
 def home():
