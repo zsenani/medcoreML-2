@@ -50,7 +50,7 @@ def hello_world():
        arr1[cc] = arr[i]
 
     sorted_arr1 = sorted(arr1.items(), key=lambda x:x[1], reverse=True)
-    return(sorted_arr1)
+    return sorted_arr1
 
 if __name__ == '__main__':
     app.run()
