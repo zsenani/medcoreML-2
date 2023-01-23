@@ -1,7 +1,7 @@
 from flask import Flask
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def hello():
     sum = 1 + 1
-    return sum
+    return jsonify({'sum' : sum})
