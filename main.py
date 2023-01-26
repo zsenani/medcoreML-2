@@ -1,6 +1,5 @@
 from flask import Flask, jsonify
 from urllib.request import urlopen
-from base64 import decode
 import pandas as pd
 from scipy.spatial.distance import squareform
 from scipy.spatial.distance import pdist, jaccard
