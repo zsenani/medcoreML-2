@@ -56,4 +56,4 @@ def tasks():
 
         tasksJSON = json.dumps(tasks)
         #tasksJSON = jsonify({'name' : sorted_arr1})
-    return jsonify({'vector' : sorted_arr1})
+    return jsonify({'vector' : vector})
