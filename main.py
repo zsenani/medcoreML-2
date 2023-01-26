@@ -14,7 +14,6 @@ def home():
 
 @app.route('/search', methods = ['GET', 'POST'])
 def tasks():
-    global vector
     if(request.method == 'POST'):
         request_data = request.data #getting the response data
         request_data = json.loads(request_data.decode('utf-8')) #converting it from json to key value pair
@@ -56,4 +55,6 @@ def tasks():
 
         tasksJSON = json.dumps(tasks)
         #tasksJSON = jsonify({'name' : sorted_arr1})
-    return jsonify({'vector' : sorted_arr1})
+        return jsonify({'vector' : sorted_arr1})
+    else: 
+        return 'ELSE'
