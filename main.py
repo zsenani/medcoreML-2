@@ -12,7 +12,7 @@ def home():
     return "App Works!!!"
 
 
-@app.route('/api/tasks', methods = ['GET', 'POST'])
+@app.route('/search', methods = ['GET', 'POST'])
 def tasks():
     global vector
     if(request.method == 'POST'):
