@@ -11,7 +11,7 @@ def home():
 
 @app.route('/search', methods = ['GET', 'POST'])
 def tasks():
-    if(request.method == 'POST'):
+    if(request.method == 'GET'):
         #request_data = request.data #getting the response data
         #request_data = json.loads(request_data.decode('utf-8')) #converting it from json to key value pair
         #vector = request_data['vector'] #assigning it to name
