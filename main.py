@@ -12,10 +12,10 @@ def home():
 @app.route('/search', methods = ['GET', 'POST'])
 def tasks():
     if(request.method == 'POST'):
-        request_data = request.data #getting the response data
-        request_data = json.loads(request_data.decode('utf-8')) #converting it from json to key value pair
-        vector = request_data['vector'] #assigning it to name
-        
+        #request_data = request.data #getting the response data
+        #request_data = json.loads(request_data.decode('utf-8')) #converting it from json to key value pair
+        #vector = request_data['vector'] #assigning it to name
+        vector = [1,	0,	0,	0,	0,	0,	0,	0,	0,	0, 0,	0,	0,	0,	1,	1,	0,	1,	0,	0,1,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,0,	0,	0,	0,	1,	0,	1,	0,	0,0,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,	0,	0,	0,	0,	1,	0,	1,	0,	0,0,0]
         dt = joblib.load('finalized_model.sav')
         pca = joblib.load('pca.sav')
         vector = pca.transform([vector])
