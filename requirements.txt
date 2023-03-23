@@ -9,4 +9,3 @@ Werkzeug==2.2.2
 zipp==3.11.0
 jsonify==0.5
 requests==2.27.1
-joblib>=0.14
