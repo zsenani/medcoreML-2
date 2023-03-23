@@ -22,6 +22,7 @@ def tasks():
             dt = pk.load(dt)
         vector = pca.transform([vector])
         predict = dt.predict(vector)
-        return jsonify({'vector' : predict[0]})
+        #return jsonify({'vector' : predict[0]})
+        return "ggg"
     else: 
         return 'ELSE'
