@@ -16,10 +16,10 @@ def tasks():
         #request_data = json.loads(request_data.decode('utf-8')) #converting it from json to key value pair
         #vector = request_data['vector'] #assigning it to name
         vector = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0]
-        dt = joblib.load('finalized_model.sav')
-        pca = joblib.load('pca.sav')
-        vector = pca.transform([vector])
-        predict = dt.predict(vector)
+        pca_reload = pk.load(open("pca.pkl",'rb'))
+        dt_reload = pk.load(open("dt.pkl",'rb'))
+        vector = pca_reload.transform([vector])
+        predict = dt_reload.predict(vector)
         #predict = dt.predict_proba(vector)
         return jsonify({'vector' : predict[0]})
     else: 
