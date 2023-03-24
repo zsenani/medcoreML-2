@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 import json
 import pickle as pk
+import pandas as pd
 from collections import Counter
 
 app = Flask(__name__)
