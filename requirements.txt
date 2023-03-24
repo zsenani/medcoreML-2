@@ -11,3 +11,4 @@ jsonify==0.5
 requests==2.27.1
 scikit-learn>=0.18
 matplotlib>=1.4.3
+pandas==1.4.2
