@@ -15,6 +15,7 @@ def home():
 def tasks():
     if(request.method == 'GET'):
         dataset = pd.read_csv('https://github.com/zsenani/medcoreML-2/blob/d9f5a98d70510682258f1e23bc3663c86a19455d/OO.csv?raw=true')
+        df = pd.DataFrame(dataset)
 #         request_data = request.data #getting the response data
 #         request_data = json.loads(request_data.decode('utf-8')) #converting it from json to key value pair
 #         vector = request_data['vector'] #assigning it to vector
