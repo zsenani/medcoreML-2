@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 import json
 import pickle as pk
 import pandas as pd
-#from collections import Counter
+from collections import Counter
 
 app = Flask(__name__)
 
@@ -32,14 +32,14 @@ def tasks():
         getPhys = df_physID.sample(n = 3)
         getPhys = getPhys.physID.drop_duplicates()
         
-#         #Symptoms pie chart
-#         df_Symptoms = df.query('prognosis == @predict[0]').iloc[:,0:132]
-#         symptoms = list(df_Symptoms.columns)
-#         symptoms_dic = dict()
-#         for i in symptoms:
-#             counts = Counter(df_Symptoms[i])
-#             if(counts[1] != 0):
-#                 symptoms_dic[i] = counts[1]
-        return jsonify({'vector' : predict[0], 'physID' : list(getPhys)})
+        #Symptoms pie chart
+        df_Symptoms = df.query('prognosis == @predict[0]').iloc[:,0:132]
+        symptoms = list(df_Symptoms.columns)
+        symptoms_dic = dict()
+        for i in symptoms:
+            counts = Counter(df_Symptoms[i])
+            if(counts[1] != 0):
+                symptoms_dic[i] = counts[1]
+        return jsonify({'vector' : predict[0], 'physID' : list(getPhys), 'symptomsDic' : symptoms_dic})
     else: 
         return 'ELSE'
