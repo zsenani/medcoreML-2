@@ -13,7 +13,7 @@ def home():
 
 @app.route('/search', methods = ['GET', 'POST'])
 def tasks():
-    if(request.method == 'GET'):
+    if(request.method == 'POST'):
         dataset = pd.read_csv('https://github.com/zsenani/medcoreML-2/blob/d9f5a98d70510682258f1e23bc3663c86a19455d/OO.csv?raw=true')
         df = pd.DataFrame(dataset)
         request_data = request.data #getting the response data
