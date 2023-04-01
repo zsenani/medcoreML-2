@@ -20,12 +20,9 @@ def tasks():
         dataset = pd.read_csv('https://github.com/zsenani/medcoreML-2/blob/d9f5a98d70510682258f1e23bc3663c86a19455d/OO.csv?raw=true')
         df = pd.DataFrame(dataset)
         #vector = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0]
-        with open("pca.pkl", 'rb') as pca:
-            pca = pk.load(pca)
-        with open("dt.pkl", 'rb') as dt:
+        with open("dt_cv.pkl", 'rb') as dt:
             dt = pk.load(dt)
-        vector = pca.transform([vector])
-        predict = dt.predict(vector)
+        predict = dt.predict([vector])
         
         #Get physID
         df_physID = df.query('prognosis == @predict[0]').iloc[:, 132:134]
