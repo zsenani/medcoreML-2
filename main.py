@@ -19,7 +19,6 @@ def tasks():
         vector = request_data['vector'] #assigning it to vector
         dataset = pd.read_csv('https://github.com/zsenani/medcoreML-2/blob/d9f5a98d70510682258f1e23bc3663c86a19455d/OO.csv?raw=true')
         df = pd.DataFrame(dataset)
-        #vector = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0]
         with open("dt_cv.pkl", 'rb') as dt:
             dt = pk.load(dt)
         predict = dt.predict([vector])
